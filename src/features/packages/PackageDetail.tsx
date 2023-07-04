@@ -55,7 +55,7 @@ export default function PackageDetail() {
   useEffect(() => {
     
 
-    socket.current = io('http://localhost:8000');
+    socket.current = io('https://travel-api-s2be.onrender.com');
 
 
 

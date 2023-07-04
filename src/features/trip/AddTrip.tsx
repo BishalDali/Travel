@@ -15,7 +15,7 @@ import {
   VStack,
   useToast,
 } from "@chakra-ui/react";
-import { useForm, SubmitHandler  } from "react-hook-form";
+import { useForm  } from "react-hook-form";
 import { useDropzone } from "react-dropzone";
 import { useCreateTripMutation } from "./tripApiSlice";
 
@@ -56,9 +56,6 @@ type Accommodation = {
   
 
   
-  type AddTripProps = {
-    onSubmit: SubmitHandler<AddTripFormData>;
-  };
 
 const AddTrip = () => {
   const { handleSubmit, register, formState: { errors }, reset} = useForm<AddTripFormData>();
@@ -357,7 +354,9 @@ const AddTrip = () => {
           <GridItem colSpan={2}>
             <FormControl>
               <FormLabel>Accommodations</FormLabel>
+              
               <VStack spacing={2} align="start">
+                
                 {accommodations.map((accommodation, index) => (
                   <Box key={index}  p={2} borderRadius="md">
                     <FormControl>
@@ -412,6 +411,7 @@ const AddTrip = () => {
             <FormControl>
               <FormLabel>Activities</FormLabel>
               <Divider />
+            
               <VStack spacing={2} align="start">
                 {activities.map((activity, index) => (
                   <Box key={index}  p={2} borderRadius="md" w="100%">
@@ -469,6 +469,7 @@ const AddTrip = () => {
                   <Box key={index}  p={2} borderRadius="md">
                     <FormControl>
                       <FormLabel>Name</FormLabel>
+                      
                       <Input
                         {...register(`transportation.${index}.name`, {
                           required: "Name is required",

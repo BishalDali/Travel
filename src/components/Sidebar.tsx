@@ -7,7 +7,6 @@ import {IoMdAdd} from 'react-icons/io';
 import { Link, Outlet } from 'react-router-dom';
 import { useAppSelector } from '../features/app/store';
 import { selectUser } from '../features/auth/authSlice';
-import { backIn } from 'framer-motion';
 
 const Sidebar = () => {
     const sidebar = useDisclosure();
